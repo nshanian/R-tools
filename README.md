@@ -1,2 +1,1 @@
-# R-tools
-R data analysis tools
+## R data analysis tools

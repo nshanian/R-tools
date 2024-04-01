@@ -1,9 +1,5 @@
 # run_spp.R
 # =============
-# Author: Anshul Kundaje, Computer Science Dept., MIT
-# Email: anshul@kundaje.net
-# Last updated: Feb 12, 2012
-# =============
 # MANDATORY ARGUMENTS
 # -c=<ChIP_tagAlign/BAMFile>, full path and name of tagAlign/BAM file (can be gzipped) (FILE EXTENSION MUST BE tagAlign.gz, tagAlign, bam or bam.gz)
 # MANDATORY ARGUMENT FOR PEAK CALLING

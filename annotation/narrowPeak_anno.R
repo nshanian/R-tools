@@ -1,5 +1,5 @@
 #set directory
-setwd("~/Desktop/SCFA data/ChIP-seq/SW480/input_butyr_GS")
+setwd("~/<path_to_working_directory>/")
 #source("https://bioconductor.org/biocLite.R")
 #annotate genomic features within 5kb
 #biocLite("EnsDb.Hsapiens.v86")
@@ -19,7 +19,7 @@ annoData <- annoGR(EnsDb.Hsapiens.v86, feature="gene")
 info(annoData)
 annoData[1:2]
 
-but <- read.csv("but_input_GS.narrowPeak.csv", header=TRUE)
+but <- read.csv("file_name.narrowPeak.csv", header=TRUE)
 head(but)
 
 butgr <- makeGRangesFromDataFrame(but, keep.extra.columns=TRUE)
@@ -47,7 +47,7 @@ but.anno$entrezID <- mapIds(org.Hs.eg.db,
 but.anno
 
 # write annotated output
-write.table(but.anno, file="but_input_GS.anno.bed", quote=FALSE, sep="\t", row.names=FALSE, col.names=TRUE)
+write.table(but.anno, file="file_name.anno.bed", quote=FALSE, sep="\t", row.names=FALSE, col.names=TRUE)
 head(but.anno)
 
 

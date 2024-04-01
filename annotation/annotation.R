@@ -16,7 +16,7 @@ annoData <- annoGR(EnsDb.Hsapiens.v86, feature="gene")
 info(annoData)
 annoData[1:2]
 
-but <- read.csv("file_name_chip_report.csv", header=TRUE)
+but <- read.csv("file_name_report.csv", header=TRUE)
 head(but)
 butgr <- makeGRangesFromDataFrame(but, keep.extra.columns=TRUE)
 butgr

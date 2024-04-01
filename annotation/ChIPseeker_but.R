@@ -1,5 +1,5 @@
 #set directory
-setwd("~/Desktop/SCFA data/ChIP-seq/SW480/H4K12pr/diffbind2/")
+setwd("~/<path_to_working_directory>/")
 #source("https://bioconductor.org/biocLite.R")
 #annotate genomic features within 5kb
 #biocLite("EnsDb.Hsapiens.v86")
@@ -16,7 +16,7 @@ annoData <- annoGR(EnsDb.Hsapiens.v86, feature="gene")
 info(annoData)
 annoData[1:2]
 
-prop <- read.csv("H4K12pr_report2_pFC.csv", header=TRUE)
+prop <- read.csv("file_name.csv", header=TRUE)
 head(prop)
 propgr <- makeGRangesFromDataFrame(prop, keep.extra.columns=TRUE)
 propgr

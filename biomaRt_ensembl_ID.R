@@ -1,10 +1,10 @@
 #set directory
-setwd("~/Desktop/SCFA data/RNA-seq/SW480/prop/")
+setwd("~/<path_to_working_directory>/")
 
 library(biomaRt)
 mart <- useMart(biomart = "ensembl", dataset = "hsapiens_gene_ensembl")
 
-ensembl_gene_id_version <-read.csv("SW480_prop_ENS_ID.csv", header=FALSE)
+ensembl_gene_id_version <-read.csv("file_name_ENS_ID.csv", header=FALSE)
 head(ensembl_gene_id_version)
 
 
@@ -14,8 +14,8 @@ df <- subset(data.frame(str_split_fixed(ensembl_gene_id_version$V1, "\\.",2)), s
 colnames(df) <- c('gene_id')
 head(df)
 
-write.csv(df, file = 'SW480_prop_ENS_ID_SPLIT_NAMES.csv', row.names = FALSE)
-read.csv('SW480_prop_ENS_ID_SPLIT_NAMES.csv')
+write.csv(df, file = 'file_name_ENS_ID_SPLIT_NAMES.csv', row.names = FALSE)
+read.csv('file_name_ENS_ID_SPLIT_NAMES.csv')
 
 
 

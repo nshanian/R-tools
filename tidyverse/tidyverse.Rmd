@@ -1,0 +1,104 @@
+---
+title: "tidyverse"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+#set directory
+setwd("~/Desktop/Tidyverse/")
+library(rmarkdown)
+library(tidyverse)
+library(tibble)
+library(ggplot2)
+```
+
+```{r}
+#inport tidyverse data set
+tidy <- read.csv("combined_tidy_vcf.csv", header=TRUE)
+head(tidy)
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=DP)) + geom_point()
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=DP, color=sample_id)) +
+  geom_point(alpha=0.5)
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=DP, color=sample_id)) +
+  geom_point(alpha=0.5) +
+geom_jitter(alpha=0.5)
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=DP, color=sample_id)) +
+  geom_point(alpha=0.5) +
+geom_jitter(alpha=0.5) +
+labs(x="Base pair position", y="Read Depth (DP)")
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=MQ, color=sample_id)) +
+  geom_point(alpha=0.5) +
+geom_jitter(alpha=0.5) +
+labs(x="Base pair position", y="Mapping Quality (MQ)")
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=MQ, color=sample_id)) +
+  geom_point() +
+  labs(x="Base pair position", y="Mapping Quality (MQ)") +
+  facet_grid(. ~ sample_id)
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=MQ, color=sample_id)) +
+  geom_point() +
+  labs(x="Base pair position", y="Mapping Quality (MQ)") +
+  facet_grid(sample_id ~ .)
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=MQ, color=sample_id)) +
+  geom_point() +
+  labs(x="Base pair position", y="Mapping Quality (MQ)") +
+  facet_grid(. ~ sample_id)
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=MQ, color=sample_id)) +
+  geom_point() +
+  labs(x="Base pair position", y="Mapping Quality (MQ)") +
+  facet_grid(sample_id ~ .) +
+  theme_bw() +
+  theme(panel.grid=element_blank())
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=QUAL, color=sample_id)) +
+  geom_point() +
+  labs(x="Base pair position", y="PHRED-scaled quality)") +
+  facet_grid(. ~ sample_id)
+```
+
+```{r}
+ggplot(data=tidy, aes(x=POS, y=QUAL, color=sample_id)) +
+  geom_point() +
+  labs(x="Base pair position", y="PHRED-scaled quality)") +
+  facet_grid(. ~ sample_id ~ .)
+```
+

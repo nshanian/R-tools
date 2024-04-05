@@ -1,6 +1,6 @@
 ## R data analysis tools
 
-This repository R tools for statisitcal analysis and visualization of next-generation sequencing (NGS) data such as ChIP-seq, ATAC-seq and RNA-seq.
+This repository contains R tools for statisitcal analysis and visualization of next-generation sequencing (NGS) data such as ChIP-seq, ATAC-seq and RNA-seq.
 
 The R scripts include the following analyses: 
 

@@ -41,4 +41,3 @@ The scripts `run_spp.R` and `run_spp_nudups.R` are by:
 [2] Kharchenko PK, Tolstorukov MY, Park PJ, Design and analysis of ChIP-seq experiments for DNA-binding proteins Nat Biotechnol. 2008
 
 Please see README.txt for more information.
-
